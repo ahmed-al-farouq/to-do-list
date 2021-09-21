@@ -1,7 +1,7 @@
 # To-Do-List App
-A simple app to add you daily tasks.
+A simple app to add your daily tasks.
 ![screenshot](img/screenshot.png)
-You can add and remove tasks or mark tasks which you already did.
+You can add and remove tasks or mark tasks that you already did.
 
 # Build With
 * HTML 5
