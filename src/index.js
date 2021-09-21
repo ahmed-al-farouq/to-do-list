@@ -1,24 +1,24 @@
-import "./style.css";
+import './style.css';
 
 function component() {
   const list = [
     {
-      description: "Finish to do list project",
+      description: 'Finish to do list project',
       completed: false,
       index: 0,
     },
     {
-      description: "Clean the kitchen",
+      description: 'Clean the kitchen',
       completed: false,
       index: 0,
     },
   ];
-  
+
   const ul = document.createElement('ul');
   ul.className = 'list';
   const title = document.createElement('h2');
   title.textContent = "Today's To Do";
-  title.className = 'title'
+  title.className = 'title';
   ul.appendChild(title);
   const input = document.createElement('input');
   input.type = 'text';
@@ -29,7 +29,7 @@ function component() {
   btnSubmit.className = 'btn';
   btnSubmit.textContent = 'Clear all completed';
 
-  list.map(task => {
+  list.map((task) => {
     const li = document.createElement('li');
     li.id = task.index;
     li.className = 'list_item';

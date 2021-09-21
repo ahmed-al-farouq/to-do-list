@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: "production",
+  mode: 'production',
   entry: './src/index.js',
   output: {
     filename: 'main.js',
@@ -11,7 +11,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
@@ -20,7 +20,7 @@ module.exports = {
             loader: 'file-loader',
           },
         ],
-      }
+      },
     ],
   },
-}
+};
