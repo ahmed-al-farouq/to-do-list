@@ -1,5 +1,5 @@
-# to-do-list
-A simple landing page to add you daily tasks.
+# To-Do-List App
+A simple app to add you daily tasks.
 ![screenshot](img/screenshot.png)
 You can add and remove tasks or mark tasks which you already did.
 
