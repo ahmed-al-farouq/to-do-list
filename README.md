@@ -13,7 +13,9 @@ You can add and remove tasks or mark tasks which you already did.
 1) Open your command
 2) Type "git clone "
 3) Enjoy!
+
 or
+
 1) Navigate to code tab
 2) Click on index.html
 3) Enjoy!
