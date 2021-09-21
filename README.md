@@ -25,3 +25,6 @@ You need to know:
 * HTML
 * CSS
 * JS
+
+# license
+This project is MIT licensed.
