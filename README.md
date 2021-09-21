@@ -1,6 +1,6 @@
 # To-Do-List App
 A simple app to add your daily tasks.
-![screenshot](img/screenshot.png)
+![screenshot](./src/img/screenshot.png)
 You can add and remove tasks or mark tasks that you already did.
 
 # Build With
@@ -25,6 +25,22 @@ You need to know:
 * HTML
 * CSS
 * JS
+
+
+# Setup
+1) Open command line
+2) Type "git clone git@github.com:Ahmed-Alfaouq/to-do-list.git"
+3) Enjoy!
+
+# Authors
+:bearded_person: **Ahmed Omar**
+  - Github: [@Ahmed-Alfarouq](https://github.com/AhmedOmarAL-farouq)
+  - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ahmed-omar912ba9199/)
+  - Twitter: [@twitter](https://twitter.com/mediocre23534)
+
+# :handshake: Contributing
+Contributions, issues, and feature requests are welcome!
+Feel free to check the issues page.
 
 # license
 This project is MIT licensed.
