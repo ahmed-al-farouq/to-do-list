@@ -1,0 +1,114 @@
+body {
+  background-color: #f6f6f6;
+}
+
+.to-do-list {
+  width: 90%;
+  height: 97vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.to-do-list .list {
+  background-color: white;
+  padding: 0;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  box-shadow: 0 0 6px 1px #00000045;
+}
+
+.to-do-list .list .title {
+  display: flex;
+  font-weight: 200;
+  font-size: 17px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 100%;
+  padding: 0 0 10px 10px;
+  border-bottom: 1px solid #00000045;
+}
+
+.to-do-list .list .title i.fa-sync-alt {
+  margin: 0 15px 0 auto;
+  color: #0000008a;
+}
+
+.to-do-list .list div.input-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.to-do-list .list div.input-container .task-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  background-color: transparent;
+  padding: 10px 0 10px 10px;
+  border-bottom: 1px solid #00000045;
+}
+
+.to-do-list .list div.input-container .task-input::placeholder {
+  font-style: italic;
+}
+
+.to-do-list .list div.input-container i.fa-level-down-alt {
+  font-size: 14px;
+  margin: 0 15px 0 -25px;
+  color: #0000008a;
+  transform: rotate(90deg);
+}
+
+.to-do-list .list .list_item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  border-bottom: 1px solid #00000045;
+}
+
+.to-do-list .list .list_item input {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.to-do-list .list .list_item i.fa-ellipsis-v {
+  font-size: 14px;
+  margin: 0 15px 0 auto;
+  color: #0000008a;
+  cursor: move;
+}
+
+.to-do-list .list .list_item:last-of-type {
+  border: none;
+}
+
+.to-do-list .list .btn {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #f6f6f6;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #7e7e7e;
+  border-top: 1px solid #00000045;
+}
+
+@media screen and (max-width: 576px) {
+  .to-do-list .list {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .to-do-list .list {
+    width: 80%;
+  }
+}
