@@ -16,15 +16,22 @@ function component() {
 
   const ul = document.createElement('ul');
   ul.className = 'list';
+  // Title
   const title = document.createElement('h2');
-  title.textContent = "Today's To Do";
+  title.innerHTML = 'Today\'s To Do <i class="fas fa-sync-alt"></i>';
   title.className = 'title';
   ul.appendChild(title);
+  // Input
+  const inputContainer = document.createElement('div');
   const input = document.createElement('input');
+  inputContainer.className = 'input-container';
   input.type = 'text';
   input.placeholder = 'Add to your list...';
   input.className = 'task-input';
-  ul.appendChild(input);
+  inputContainer.appendChild(input);
+  inputContainer.innerHTML += '<i class="fas fa-level-down-alt"></i>';
+  ul.appendChild(inputContainer);
+  // Add Btn
   const btnSubmit = document.createElement('button');
   btnSubmit.className = 'btn';
   btnSubmit.textContent = 'Clear all completed';
@@ -36,6 +43,7 @@ function component() {
     li.innerHTML = `    
     <input type="checkbox" value=${task.completed}/>
     <p>${task.description}</p>
+    <i class="fas fa-ellipsis-v"></i>
     `;
     return ul.appendChild(li);
   });
