@@ -1,10 +1,10 @@
 import './style.css';
-import changeState  from './js/changeState';
+import changeState from './js/changeState.js';
 
 class List {
   constructor() {
-    let newList = JSON.parse(localStorage.getItem('newList'));
-    if(newList){
+    const newList = JSON.parse(localStorage.getItem('newList'));
+    if (newList) {
       this.listObj = newList;
     } else {
       this.listObj = [
@@ -32,8 +32,8 @@ class List {
     }
   }
 
-  createItems (listContainer) {
-    let newList = this.listObj.filter((task) => task.completed === false);
+  createItems(listContainer) {
+    const newList = this.listObj.filter((task) => task.completed === false);
     newList.forEach((task) => {
       const li = document.createElement('li');
       li.id = task.index;
@@ -41,7 +41,6 @@ class List {
       // checkbox
       const checkBox = document.createElement('input');
       checkBox.type = 'checkbox';
-      console.log(checkBox.checked)
       // description
       const desc = document.createElement('p');
       desc.textContent = task.description;
@@ -50,9 +49,9 @@ class List {
       li.innerHTML += `
       <i class="fas fa-ellipsis-v"></i>
       `;
-      li.childNodes[0].addEventListener('change', () => changeState(li.childNodes[0], task.index));
+      li.childNodes[0].addEventListener('change', () => changeState(li.childNodes[0], task.index, this.listObj));
       return listContainer.append(li);
-    })
+    });
   }
 }
 
@@ -61,7 +60,7 @@ const list = new List();
 list.createItems(mainListContainer);
 
 export default list;
-/* 
+/*
   What should I do :
   1) structure
     ** Array of objects (list)

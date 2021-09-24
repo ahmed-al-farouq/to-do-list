@@ -1,13 +1,10 @@
-import list from '../index';
-
-const changeState = (checkBox, index) => {
-  console.log(checkBox.checked);
+const changeState = (checkBox, index, list) => {
   if (checkBox.checked) {
-    list.listObj[index-1].completed = true;
+    list[index - 1].completed = true;
   } else {
-    list.listObj[index-1].completed = false;
+    list[index - 1].completed = false;
   }
-  return localStorage.setItem('newList', JSON.stringify(list.listObj));
-}
+  return localStorage.setItem('newList', JSON.stringify(list));
+};
 
 export default changeState;
