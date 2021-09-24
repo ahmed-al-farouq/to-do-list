@@ -4,6 +4,7 @@
   "description": "A simple app to add you daily tasks. ![screenshot](img/screenshot.png) You can add and remove tasks or mark tasks which you already did.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open",
     "build": "webpack"
   },
   "repository": {
@@ -31,7 +32,8 @@
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0",
     "webpack": "^5.53.0",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
