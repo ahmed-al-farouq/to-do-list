@@ -57,7 +57,7 @@ class List {
           setTimeout(() => {
             li.childNodes[3].classList.remove('d-none');
             li.childNodes[5].classList.add('d-none');
-          }, 100);
+          }, 300);
         });
         li.childNodes[1].addEventListener('input', () => edit(li.childNodes[1], task.index, this.listObj));
         li.childNodes[5].addEventListener('click', () => remove(this.listObj, task.index));
