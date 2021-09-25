@@ -8,7 +8,7 @@ export const add = (list) => {
     list.push({
       description: inputField.value,
       completed: false,
-      index: list.length+1,
+      index: list.length + 1,
     });
     localStorage.setItem('newList', JSON.stringify(list));
   }
@@ -18,7 +18,7 @@ export const add = (list) => {
 export const remove = (list, index) => {
   const listFilterd = list.filter((item) => item.index !== index);
   const newList = listFilterd.map((item, index) => {
-    item.index = index+1
+    item.index = index + 1;
     return item;
   });
   localStorage.setItem('newList', JSON.stringify(newList));
@@ -33,7 +33,7 @@ export const edit = (desc, index, list) => {
 export const removeAllCompleted = (list) => {
   const filterList = list.filter((task) => task.completed === false);
   const newList = filterList.map((item, index) => {
-    item['index'] = index+1
+    item.index = index + 1;
     return item;
   });
   localStorage.setItem('newList', JSON.stringify(newList));
