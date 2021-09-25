@@ -9,7 +9,7 @@ export const add = (list) => {
     list.push({
       description: inputField.value,
       completed: false,
-      id: list.length,
+      index: list.length,
     });
     window.location.reload();
   }
