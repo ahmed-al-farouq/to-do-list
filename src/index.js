@@ -41,7 +41,7 @@ class List {
         <i class="fas fa-ellipsis-v" id="move-icon"></i>
         <i class="fas fa-trash d-none" id="trash-icon"></i>
         `;
-        if(task.completed){
+        if (task.completed) {
           li.childNodes[0].checked = 'true';
           li.childNodes[1].classList.add('line-through');
         }

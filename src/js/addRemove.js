@@ -16,8 +16,8 @@ export const add = (list) => {
   return localStorage.setItem('newList', JSON.stringify(list));
 };
 
-export const remove = (list, id) => {
-  const newList = list.filter((item) => item.id !== id);
+export const remove = (list, index) => {
+  const newList = list.filter((item) => item.index !== index);
   localStorage.setItem('newList', JSON.stringify(newList));
   return window.location.reload();
 };
