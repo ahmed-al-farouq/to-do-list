@@ -1,7 +1,7 @@
 import './style.css';
 import changeState from './js/changeState.js';
 import {
-  add, clearSelected, edit, remove,
+  add, removeAllCompleted, edit, remove,
 } from './js/addRemove.js';
 
 class List {
@@ -21,7 +21,7 @@ class List {
       e.preventDefault();
       return add(this.listObj);
     });
-    clearSelectedBtn.addEventListener('click', () => clearSelected(this.listObj));
+    clearSelectedBtn.addEventListener('click', () => removeAllCompleted(this.listObj));
     if (this.listObj.length) {
       this.listObj.forEach((task, index) => {
         const li = document.createElement('li');
@@ -41,8 +41,12 @@ class List {
         <i class="fas fa-ellipsis-v" id="move-icon"></i>
         <i class="fas fa-trash d-none" id="trash-icon"></i>
         `;
+        if(task.completed){
+          li.childNodes[0].checked = 'true';
+          li.childNodes[1].classList.add('line-through');
+        }
         li.childNodes[1].value = task.description;
-        li.childNodes[0].addEventListener('change', () => changeState(li.childNodes[0], task.index, this.listObj));
+        li.childNodes[0].addEventListener('change', () => changeState(li.childNodes[0], task.id, this.listObj));
         li.childNodes[1].addEventListener('click', () => {
           li.classList.add('editing-state');
           li.childNodes[3].classList.add('d-none');
@@ -55,8 +59,8 @@ class List {
             li.childNodes[5].classList.add('d-none');
           }, 100);
         });
-        li.childNodes[1].addEventListener('input', () => edit(li.childNodes[1], task.index, this.listObj));
-        li.childNodes[5].addEventListener('click', () => remove(this.listObj, task.index));
+        li.childNodes[1].addEventListener('input', () => edit(li.childNodes[1], task.id, this.listObj));
+        li.childNodes[5].addEventListener('click', () => remove(this.listObj, task.id));
         return listContainer.append(li);
       });
     } else {
