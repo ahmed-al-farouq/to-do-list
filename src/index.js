@@ -44,10 +44,12 @@ class List {
         li.childNodes[1].value = task.description;
         li.childNodes[0].addEventListener('change', () => changeState(li.childNodes[0], task.index, this.listObj));
         li.childNodes[1].addEventListener('click', () => {
+          li.classList.add('editing-state');
           li.childNodes[3].classList.add('d-none');
           li.childNodes[5].classList.remove('d-none');
         });
         li.childNodes[1].addEventListener('blur', () => {
+          li.classList.remove('editing-state');
           setTimeout(() => {
             li.childNodes[3].classList.remove('d-none');
             li.childNodes[5].classList.add('d-none');

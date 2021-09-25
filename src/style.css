@@ -16,6 +16,10 @@ body {
   height: 95vh;
 }
 
+.editing-state {
+  background-color: #afafaf4d;
+}
+
 /* Start List */
 .to-do-list {
   background-color: white;
@@ -101,6 +105,7 @@ body {
   width: 100%;
   font-size: 18px;
   border-bottom: 1px solid #00000045;
+  transition: 0.5s;
 }
 
 .to-do-list .list .list_item input[type="checkbox"] {
@@ -114,6 +119,7 @@ body {
   background-color: transparent;
   padding: 15px;
   font-size: 18px;
+  outline: none;
 }
 
 .to-do-list .list .list_item input[type="text"]::placeholder {
@@ -159,10 +165,6 @@ body {
   .to-do-list .input-container .task-input {
     width: 94%;
   }
-
-  .to-do-list .list {
-    width: 90%;
-  }
 }
 
 @media screen and (min-width: 576px) and (max-width: 991px) {
@@ -172,9 +174,5 @@ body {
 
   .to-do-list .input-container .task-input {
     width: 97%;
-  }
-
-  .to-do-list .list {
-    width: 80%;
   }
 }
