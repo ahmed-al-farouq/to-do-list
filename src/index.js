@@ -1,5 +1,8 @@
 import './style.css';
 import changeState from './js/changeState.js';
+import {
+  add, clearSelected, edit, remove,
+} from './js/addRemove.js';
 
 class List {
   constructor() {
@@ -7,72 +10,62 @@ class List {
     if (newList) {
       this.listObj = newList;
     } else {
-      this.listObj = [
-        {
-          description: 'Finish to do list project',
-          completed: false,
-          index: 1,
-        },
-        {
-          description: 'Clean the kitchen',
-          completed: false,
-          index: 2,
-        },
-        {
-          description: 'Clean the Bathroom',
-          completed: false,
-          index: 3,
-        },
-        {
-          description: 'Clean the Bed',
-          completed: false,
-          index: 4,
-        },
-      ];
+      this.listObj = [];
     }
   }
 
   createItems(listContainer) {
-    const newList = this.listObj.filter((task) => task.completed === false);
-    newList.forEach((task) => {
-      const li = document.createElement('li');
-      li.id = task.index;
-      li.className = 'list_item';
-      // checkbox
-      const checkBox = document.createElement('input');
-      checkBox.type = 'checkbox';
-      // description
-      const desc = document.createElement('p');
-      desc.textContent = task.description;
-      li.append(checkBox, desc);
-      // Icon
-      li.innerHTML += `
-      <i class="fas fa-ellipsis-v"></i>
-      `;
-      li.childNodes[0].addEventListener('change', () => changeState(li.childNodes[0], task.index, this.listObj));
-      return listContainer.append(li);
+    const inputField = document.querySelector('.input-container');
+    const clearSelectedBtn = document.getElementById('clear-selected');
+    inputField.addEventListener('submit', (e) => {
+      e.preventDefault();
+      return add(this.listObj);
     });
+    clearSelectedBtn.addEventListener('click', () => clearSelected(this.listObj));
+    if (this.listObj.length) {
+      this.listObj.forEach((task, index) => {
+        const li = document.createElement('li');
+        li.id = index + 1;
+        this.listObj[index].index = index + 1;
+        li.className = 'list_item';
+        // checkbox
+        const checkBox = document.createElement('input');
+        checkBox.type = 'checkbox';
+        // description
+        const desc = document.createElement('input');
+        desc.className = 'desc';
+        desc.type = 'text';
+        li.append(checkBox, desc);
+        // Icon
+        li.innerHTML += `
+        <i class="fas fa-ellipsis-v" id="move-icon"></i>
+        <i class="fas fa-trash d-none" id="trash-icon"></i>
+        `;
+        li.childNodes[1].value = task.description;
+        li.childNodes[0].addEventListener('change', () => changeState(li.childNodes[0], task.index, this.listObj));
+        li.childNodes[1].addEventListener('click', () => {
+          li.childNodes[3].classList.add('d-none');
+          li.childNodes[5].classList.remove('d-none');
+        });
+        li.childNodes[1].addEventListener('blur', () => {
+          setTimeout(() => {
+            li.childNodes[3].classList.remove('d-none');
+            li.childNodes[5].classList.add('d-none');
+          }, 100);
+        });
+        li.childNodes[1].addEventListener('input', () => edit(li.childNodes[1], task.index, this.listObj));
+        li.childNodes[5].addEventListener('click', () => remove(this.listObj, task.index));
+        return listContainer.append(li);
+      });
+    } else {
+      const emptyList = document.createElement('h2');
+      emptyList.className = 'empty-list';
+      emptyList.textContent = 'Add Something today';
+      listContainer.append(emptyList);
+    }
   }
 }
 
 const mainListContainer = document.getElementById('list');
 const list = new List();
 list.createItems(mainListContainer);
-
-export default list;
-/*
-  What should I do :
-  1) structure
-    ** Array of objects (list)
-      ==> description (string)
-      ==> completed (boolean)
-      ==> index (num starts from 1)
-    ** class
-      ==> interate the array
-      ==> Save to local storage
-  2) Ineractive
-    ** Change content
-    ** Drag & Drop
-    ** Add & Remove
-    ** Remove All
-*/

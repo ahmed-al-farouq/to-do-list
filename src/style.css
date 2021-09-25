@@ -1,3 +1,13 @@
+/* GLobal Rules */
+.to-do-list .line-through {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.596);
+}
+
+.to-do-list .d-none {
+  display: none;
+}
+
 body {
   background-color: #f6f6f6;
   display: flex;
@@ -6,10 +16,11 @@ body {
   height: 95vh;
 }
 
+/* Start List */
 .to-do-list {
   background-color: white;
   padding: 0;
-  width: 60%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,14 +43,15 @@ body {
   color: #0000008a;
 }
 
-.to-do-list div.input-container {
+.to-do-list .input-container {
   width: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.to-do-list div.input-container .task-input {
-  width: 100%;
+.to-do-list .input-container .task-input {
+  width: 98%;
   border: none;
   outline: none;
   font-size: 17px;
@@ -48,21 +60,39 @@ body {
   border-bottom: 1px solid #00000045;
 }
 
-.to-do-list div.input-container .task-input::placeholder {
+.to-do-list .input-container .task-input::placeholder {
   font-style: italic;
 }
 
-.to-do-list div.input-container i.fa-level-down-alt {
+.to-do-list .input-container i.fa-level-down-alt {
   font-size: 14px;
   margin: 0 15px 0 -25px;
   color: #0000008a;
   transform: rotate(90deg);
 }
 
+.to-do-list .input-container .alert {
+  color: rgb(124, 7, 7);
+  font-size: 18px;
+  width: 100%;
+  margin-left: 10px;
+}
+
 .to-do-list .list {
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+.to-do-list .list .empty-list {
+  text-align: center;
+  font-family: sans-serif;
+  color: #7e7e89;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
 }
 
 .to-do-list .list .list_item {
@@ -73,16 +103,36 @@ body {
   border-bottom: 1px solid #00000045;
 }
 
-.to-do-list .list .list_item input {
+.to-do-list .list .list_item input[type="checkbox"] {
   margin: 0 10px;
   cursor: pointer;
 }
 
-.to-do-list .list .list_item i.fa-ellipsis-v {
-  font-size: 14px;
-  margin: 0 15px 0 auto;
+.to-do-list .list .list_item input[type="text"] {
+  width: 90%;
+  border: none;
+  background-color: transparent;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.to-do-list .list .list_item input[type="text"]::placeholder {
+  color: black;
+  font-size: 18px;
+}
+
+.to-do-list .list .list_item i#move-icon {
+  font-size: 15px;
+  margin: 0 15px 0 5px;
   color: #0000008a;
   cursor: move;
+}
+
+.to-do-list .list .list_item i#trash-icon {
+  font-size: 18px;
+  margin: 0 15px 0 5px;
+  color: #0000008a;
+  cursor: pointer;
 }
 
 .to-do-list .list .list_item:last-of-type {
@@ -102,25 +152,29 @@ body {
 }
 
 @media screen and (max-width: 576px) {
+  .to-do-list {
+    width: 96%;
+  }
+
+  .to-do-list .input-container .task-input {
+    width: 94%;
+  }
+
   .to-do-list .list {
     width: 90%;
   }
 }
 
 @media screen and (min-width: 576px) and (max-width: 991px) {
+  .to-do-list {
+    width: 80%;
+  }
+
+  .to-do-list .input-container .task-input {
+    width: 97%;
+  }
+
   .to-do-list .list {
     width: 80%;
   }
-}
-
-.over {
-  background-color: red;
-}
-
-.start {
-  background-color: yellow;
-}
-
-.drop {
-  background-color: blue;
 }
