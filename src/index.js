@@ -23,10 +23,9 @@ class List {
     });
     clearSelectedBtn.addEventListener('click', () => removeAllCompleted(this.listObj));
     if (this.listObj.length) {
-      this.listObj.forEach((task, index) => {
+      this.listObj.forEach((task) => {
         const li = document.createElement('li');
-        li.id = index + 1;
-        this.listObj[index].index = index + 1;
+        li.id = task.index;
         li.className = 'list_item';
         // checkbox
         const checkBox = document.createElement('input');
@@ -57,7 +56,7 @@ class List {
           setTimeout(() => {
             li.childNodes[3].classList.remove('d-none');
             li.childNodes[5].classList.add('d-none');
-          }, 300);
+          }, 400);
         });
         li.childNodes[1].addEventListener('input', () => edit(li.childNodes[1], task.index, this.listObj));
         li.childNodes[5].addEventListener('click', () => remove(this.listObj, task.index));
