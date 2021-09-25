@@ -10,14 +10,15 @@
       <h2 class="title">
         Today's To Do <i class="fas fa-sync-alt"></i>
       </h2>
-      <div class="input-container">
-        <input type="text" name="tasks" class="task-input" placeholder="Add to your list..." />
+      <form class="input-container">
+        <input type="text" name="tasks" class="task-input" placeholder="Add to your list..." autocomplete="off"/>
         <i class="fas fa-level-down-alt"></i>
-      </div>
+        <span class="alert"></span>
+      </form>
       <ul class="list" id="list">
         
       </ul>
-      <button class="btn">Clear all completed</button>
+      <button class="btn" id="clear-selected">Clear all completed</button>
     </div>
    <script src="main.js"></script>
    <script src="https://kit.fontawesome.com/73d0725f91.js" crossorigin="anonymous"></script>
