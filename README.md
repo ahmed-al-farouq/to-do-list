@@ -11,7 +11,7 @@ You can add and remove tasks or mark tasks that you already did.
 
 # Get started
 1) Open your command
-2) Type "git clone "
+2) Type "git clone https://github.com/ahmed-al-farouq/to-do-list.git"
 3) Enjoy!
 
 or
@@ -25,18 +25,19 @@ You need to know:
 * HTML
 * CSS
 * JS
+* Webpack
 
 
 # Setup
 1) Open command line
-2) Type "git clone git@github.com:Ahmed-Alfaouq/to-do-list.git"
+2) Type "git clone https://github.com/ahmed-al-farouq/to-do-list.git"
 3) Enjoy!
 
 # Authors
 :bearded_person: **Ahmed Omar**
-  - Github: [@Ahmed-Alfarouq](https://github.com/AhmedOmarAL-farouq)
-  - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ahmed-omar912ba9199/)
-  - Twitter: [@twitter](https://twitter.com/mediocre23534)
+  - Github: [@Ahmed-Alfarouq](https://github.com/ahmed-al-farouq)
+  - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ahmed-al-farouq/)
+  - Twitter: [@twitter](https://twitter.com/ahmed_al_farouq)
 
 # :handshake: Contributing
 Contributions, issues, and feature requests are welcome!
