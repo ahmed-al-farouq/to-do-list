@@ -20,6 +20,9 @@ or
 2) Click on index.html
 3) Enjoy!
 
+# Live Demo
+[Live-Dome](https://ahmed-al-farouq.github.io/to-do-list/)
+
 # Prerequisites
 You need to know:
 * HTML
@@ -31,7 +34,9 @@ You need to know:
 # Setup
 1) Open command line
 2) Type "git clone https://github.com/ahmed-al-farouq/to-do-list.git"
-3) Enjoy!
+3) npm i webpack webpack-cli webpack-dev-server --save-dev
+4) npm run start
+5) Enjoy!
 
 # Authors
 :bearded_person: **Ahmed Omar**
