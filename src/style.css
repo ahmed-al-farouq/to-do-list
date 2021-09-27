@@ -8,12 +8,16 @@
   display: none;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   background-color: #f6f6f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 95vh;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
 }
 
 .editing-state {
@@ -30,6 +34,10 @@ body {
   align-items: center;
   overflow-x: hidden;
   box-shadow: 0 0 6px 1px #00000045;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .to-do-list .title {
@@ -175,4 +183,31 @@ body {
   .to-do-list .input-container .task-input {
     width: 97%;
   }
+}
+
+/* Start Footer */
+.footer {
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 4px 9px 1px #480404ab;
+}
+
+.footer p i.fa {
+  color: rgb(155, 4, 4);
+}
+
+.footer div.contacts a {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #000;
 }
