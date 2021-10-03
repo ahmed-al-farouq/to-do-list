@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A simple app to add you daily tasks. ![screenshot](img/screenshot.png) You can add and remove tasks or mark tasks which you already did.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack",
     "deploy": "gh-pages -d dist"
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/Ahmed-Alfaouq/to-do-list#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.3.0",
     "eslint": "^7.32.0",
@@ -27,6 +29,8 @@
     "eslint-plugin-import": "^2.24.2",
     "file-loader": "^6.2.0",
     "hint": "^6.1.4",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.2.4",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -34,10 +38,30 @@
     "stylelint-scss": "^3.21.0",
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.2.1"
+    "webpack-dev-server": "^4.3.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "lodash": "^4.17.21"
+  },
+  "jest": {
+    "modulePaths": [
+      "/shared/vendor/modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "./__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "./__mocks__/fileMock.js",
+      "^react(.*)$": "./vendor/react-master$1",
+      "^config$": "./configs/app-config.js"
+    }
   }
 }

@@ -81,6 +81,7 @@ body {
   margin: 0 15px 0 -25px;
   color: #0000008a;
   transform: rotate(90deg);
+  cursor: pointer;
 }
 
 .to-do-list .input-container .alert {
