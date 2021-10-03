@@ -15,12 +15,13 @@ export const add = (list) => {
   return window.location.reload();
 };
 
-export const remove = (list, index, listContainer) => {
+export const remove = (list, index) => {
   const listFilterd = list.filter((item) => item.index !== index);
   const newList = listFilterd.map((item, index) => {
     item.index = index + 1;
     return item;
   });
+  localStorage.setItem('newList', JSON.stringify(newList));
   return window.location.reload();
 };
 

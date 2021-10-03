@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "gh-pages": "^3.2.3",
     "lodash": "^4.17.21"
   },
   "jest": {
